@@ -1,6 +1,6 @@
 import unittest
-from quiz1 import HiLo
-from quiz1 import Hangman
+from Quiz1 import HiLo
+from Quiz1 import Hangman
 
 
 # HiLo is the high-low game where repeated guesses
@@ -18,10 +18,10 @@ from quiz1 import Hangman
 class MyTestCase(unittest.TestCase):
     def setUp(self) -> None:
         self.game = HiLo(1)
-    # def test_game(self):
-    #     self.assertTrue(self.game.guess(0) == -1)
-    #     self.assertTrue(self.game.guess(1) == 0)
-    #     self.assertTrue(self.game.guess(2) == 1)
+    def test_game(self):
+        self.assertTrue(self.game.guess(0) == -1, f"the game returns {self.game.guess(0) == -1}")
+        self.assertTrue(self.game.guess(1) == 0)
+        self.assertTrue(self.game.guess(2) == 1)
 
 
 # The Hangman class is a game of hangman where you create an instance by
@@ -56,9 +56,11 @@ class HangmanTestCase(unittest.TestCase):
         # self.assertTrue(self.game.turns == 1,f"{self.game.turns}")
         # self.assertTrue(self.game.guess("B") == "A____")
         # self.assertTrue(self.game.turns == 2)
-        # self.assertTrue(self.game.guess("p") == "Ap___")
+        # self.assertTrue(self.game.guess("p") == "App__")
         # self.assertTrue(self.game.turns == 3)
-        # self.assertTrue(self.game.guess("e") == "Ap__e")
+        # self.assertTrue(self.game.guess("e") == "App_e")
+        # self.assertTrue(self.game.turns == 4)
+        # self.assertTrue(self.game.guess("l") == "Apple")
 
 
 if __name__ == '__main__':
